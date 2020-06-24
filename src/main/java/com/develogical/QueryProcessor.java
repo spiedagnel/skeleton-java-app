@@ -7,9 +7,14 @@ public class QueryProcessor {
             return "William Shakespeare  ";
         } else if (query.toLowerCase().contains("what is your name")) {
             return "Sam";
+        }else if (query.toLowerCase().contains("what is ")) {
+            if (query.toLowerCase().contains("plus")){
+                return "Sam";
+            }
+
         }else if (query.toLowerCase().contains("which of the following numbers is the largest")) {
             String[] split = query.split(": ");
-            String[] s = split[1].split(", ");
+            String[] s = split[2].split(", ");
             int max = 0;
             for (int i = 0; i < s.length; i++) {
                 String s1 = s[i];
