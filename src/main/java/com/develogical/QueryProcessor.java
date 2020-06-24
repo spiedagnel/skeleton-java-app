@@ -45,12 +45,17 @@ public class QueryProcessor {
         }else if (query.toLowerCase().contains(" primes ")){
             String[] numbersList = query.split(": ");
             String[] numbers = numbersList[2].split(", ");
+            String str = "";
             for (int i = 0; i < numbers.length; i++) {
                 int i1 = Integer.valueOf(numbers[i]);
                 //2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101, 103, 107, 109, 113, 127, 131, 137, 139, 149, 151, 157, 163, 167, 173, 179, 181, 191, 193, 197, 199
                 if(isPrime(i1)){
-                    return numbers[i];
+                    str += numbers[i] +",";
                 }
+                if (str != null && str.length() > 0 && str.charAt(str.length() - 1) == ',') {
+                    str = str.substring(0, str.length() - 1);
+                }
+                return str;
             }
         }else if (query.toLowerCase().contains(" what colour is a banana")) {
             return "yellow";
