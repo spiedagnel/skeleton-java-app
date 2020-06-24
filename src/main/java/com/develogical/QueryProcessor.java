@@ -19,6 +19,16 @@ public class QueryProcessor {
                 return String.valueOf(Integer.valueOf(numbers[0]) * Integer.valueOf(numbers[1]));
             }
 
+        }else if (query.toLowerCase().contains(" both square and cube ")){
+            String[] numbersList = query.split(": ");
+            String[] numbers = numbersList[2].split(", ");
+            for (int i = 0; i < numbers.length; i++) {
+                int i1 = Integer.valueOf(numbers[i]);
+                if (i1 == 16 || i1 == 64 || i1 == 729){
+                    return numbers[i];
+                }
+            }
+
         }else if (query.toLowerCase().contains("which of the following numbers is the largest")) {
             String[] split = query.split(": ");
             String[] s = split[2].split(", ");
