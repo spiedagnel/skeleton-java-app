@@ -13,6 +13,10 @@ public class QueryProcessor {
                 String[] addition = query.split("what is ");
                 String[] numbers = addition[1].split(" plus ");
                 return String.valueOf(Integer.valueOf(numbers[0]) + Integer.valueOf(numbers[1]));
+            }else if (query.toLowerCase().contains(" multiplied by ")){
+                String[] addition = query.split("what is ");
+                String[] numbers = addition[1].split(" multiplied by ");
+                return String.valueOf(Integer.valueOf(numbers[0]) * Integer.valueOf(numbers[1]));
             }
 
         }else if (query.toLowerCase().contains("which of the following numbers is the largest")) {
