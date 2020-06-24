@@ -21,6 +21,11 @@ public class QueryProcessorTest {
   }
 
   @Test
+  public void isLargest() throws Exception {
+    assertThat(queryProcessor.process("which of the following numbers is the largest: 20, 314"), containsString("314"));
+  }
+
+  @Test
   public void returnsEmptyStringIfCannotProcessQuery() throws Exception {
     assertThat(queryProcessor.process("test"), is(""));
   }
