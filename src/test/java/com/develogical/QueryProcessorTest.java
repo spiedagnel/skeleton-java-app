@@ -22,9 +22,14 @@ public class QueryProcessorTest {
 
   @Test
   public void isLargest() throws Exception {
-    assertThat(queryProcessor.process("which of the following numbers is the largest: 20, 314"), containsString("314"));
+    assertThat(queryProcessor.process("q:  which of the following numbers is the largest: 20, 314"), containsString("314"));
   }
 
+  //0what%20is%2015%20plus%2017
+  @Test
+  public void isPlus() throws Exception {
+    assertThat(queryProcessor.process("q: what is 15 plus 17"), containsString("32"));
+  }
   @Test
   public void returnsEmptyStringIfCannotProcessQuery() throws Exception {
     assertThat(queryProcessor.process("test"), is(""));
