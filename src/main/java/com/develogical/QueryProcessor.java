@@ -54,11 +54,11 @@ public class QueryProcessor {
             }
         }else if (query.toLowerCase().contains(" what colour is a banana ")) {
             return "yellow";
-        }   else if (query.toLowerCase().contains(" Theresa May ")){
+        }   else if (query.toLowerCase().contains(" theresa may ")){
                 return "2016";
-        }   else if (query.toLowerCase().contains(" Dr No ")){
+        }   else if (query.toLowerCase().contains(" dr no ")){
             return "Sean Connery";
-        }   else if (query.toLowerCase().contains(" Eiffel Tower ")){
+        }   else if (query.toLowerCase().contains(" eiffel tower ")){
             return "Paris";
         }else if (query.toLowerCase().contains("which of the following numbers is the largest")) {
             String[] split = query.split(": ");
