@@ -29,6 +29,8 @@ public class QueryProcessor {
                 }
             }
 
+        }else if (query.toLowerCase().contains(" what colour is a banana ")){
+            return "yellow";
         }else if (query.toLowerCase().contains("which of the following numbers is the largest")) {
             String[] split = query.split(": ");
             String[] s = split[2].split(", ");
