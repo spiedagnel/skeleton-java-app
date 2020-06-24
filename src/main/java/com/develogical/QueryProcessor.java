@@ -31,6 +31,10 @@ public class QueryProcessor {
                 String[] addition = query.split("what is ");
                 String[] numbers = addition[1].split(" multiplied by ");
                 return String.valueOf(Integer.valueOf(numbers[0]) * Integer.valueOf(numbers[1]));
+            }else if (query.toLowerCase().contains(" to the power of ")){
+                String[] addition = query.split("what is ");
+                String[] numbers = addition[1].split(" to the power of ");
+                return String.valueOf(Math.pow(Integer.valueOf(numbers[0]),Integer.valueOf(numbers[1])));
             }
 
         }else if (query.toLowerCase().contains(" both square and cube ")){
