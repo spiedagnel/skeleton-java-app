@@ -56,7 +56,7 @@ public class QueryProcessor {
             return "yellow";
         }   else if (query.toLowerCase().contains(" theresa may ")){
                 return "2016";
-        }   else if (query.toLowerCase().contains(" dr no ")){
+        }   else if (query.toLowerCase().contains(" dr no")){
             return "Sean Connery";
         }   else if (query.toLowerCase().contains(" eiffel tower ")){
             return "Paris";
