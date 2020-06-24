@@ -16,6 +16,13 @@ public class QueryProcessor {
         return flag;
     }
 
+    int fib(int n)
+    {
+        if (n <= 1)
+            return n;
+        return fib(n-1) + fib(n-2);
+    }
+
     public String process(String query) {
         if (query.toLowerCase().contains("romeo and juliet")) {
             return "William Shakespeare  ";
@@ -35,7 +42,12 @@ public class QueryProcessor {
                 String[] addition = query.split("what is ");
                 String[] numbers = addition[1].split(" to the power of ");
                 return String.valueOf(Math.pow(Integer.valueOf(numbers[0]),Integer.valueOf(numbers[1])));
+            }else if (query.toLowerCase().contains("th number in the Fibonacci sequence")){
+                String[] addition = query.split("what is the ");
+                String[] numbers = addition[1].split("th number in the Fibonacci sequence");
+                return String.valueOf(fib(Integer.valueOf(numbers[0])));
             }
+            //th%20number%20in%20the%20Fibonacci%20sequence
 
         }else if (query.toLowerCase().contains(" both square and cube ")){
             String[] numbersList = query.split(": ");
