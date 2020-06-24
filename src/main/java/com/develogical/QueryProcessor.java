@@ -34,7 +34,7 @@ public class QueryProcessor {
             for (int i = 0; i < numbers.length; i++) {
                 int i1 = Integer.valueOf(numbers[i]);
                 //2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101, 103, 107, 109, 113, 127, 131, 137, 139, 149, 151, 157, 163, 167, 173, 179, 181, 191, 193, 197, 199
-                if (i1 == 2 || i1 == 3 || i1 == 5 || i1 == 7 || i1 == 11 || i1 == 5){
+                if (i1 == 2 || i1 == 3 || i1 == 5 || i1 == 7 || i1 == 11 || i1 == 13 || i1 == 17 || i1 == 19 || i1 == 23){
                     return numbers[i];
                 }
             }
@@ -42,6 +42,10 @@ public class QueryProcessor {
             return "yellow";
         }   else if (query.toLowerCase().contains(" Theresa May ")){
                 return "2016";
+        }   else if (query.toLowerCase().contains(" Dr No ")){
+            return "Sean Connery";
+        }   else if (query.toLowerCase().contains(" Eiffel Tower ")){
+            return "Paris";
         }else if (query.toLowerCase().contains("which of the following numbers is the largest")) {
             String[] split = query.split(": ");
             String[] s = split[2].split(", ");
